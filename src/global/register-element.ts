@@ -1,0 +1,73 @@
+import { App } from 'vue'
+import {
+  ElButton,
+  ElCheckbox,
+  ElForm,
+  ElFormItem,
+  ElIcon,
+  ElInput,
+  ElTabPane,
+  ElTabs,
+  ElContainer,
+  ElHeader,
+  ElAside,
+  ElMain,
+  ElMenu,
+  ElSubMenu,
+  ElMenuItem,
+  ElRow,
+  ElCol,
+  ElSelect,
+  ElOption,
+  ElDatePicker,
+  ElDropdown,
+  ElDropdownItem,
+  ElDropdownMenu,
+  ElBreadcrumb,
+  ElBreadcrumbItem,
+  ElTable,
+  ElTableColumn,
+  ElPagination,
+  ElImage,
+  ElDialog,
+  ElTree
+} from 'element-plus'
+const components = [
+  ElButton,
+  ElTabs,
+  ElTabPane,
+  ElIcon,
+  ElCheckbox,
+  ElForm,
+  ElFormItem,
+  ElInput,
+  ElContainer,
+  ElHeader,
+  ElAside,
+  ElMain,
+  ElMenu,
+  ElSubMenu,
+  ElMenuItem,
+  ElRow,
+  ElCol,
+  ElSelect,
+  ElOption,
+  ElDatePicker,
+  ElDropdown,
+  ElDropdownItem,
+  ElDropdownMenu,
+  ElBreadcrumb,
+  ElBreadcrumbItem,
+  ElTable,
+  ElTableColumn,
+  ElPagination,
+  ElImage,
+  ElDialog,
+  ElTree
+]
+
+export default function (app: App): void {
+  for (const component of components) {
+    app.component(component.name, component)
+  }
+}
