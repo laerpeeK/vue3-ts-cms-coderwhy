@@ -1,4 +1,24 @@
-# vue3-ts-cms-2
+<<<<<<< HEAD
+# vue3-ts-cms-coderwhy
+根据coderwhy vue3项目教学视频复刻的项目demo
+
+## 原项目说明
+[视频地址 收费](https://ke.qq.com/course/package/36008)
+
+[项目原作者coderwhy](https://github.com/coderwhy)
+
+
+## 此项目说明
+### 技术栈
+**Vue3 + Vue-Router + Vuex + TypeScript + ElementPlus + scss + Axios**
+
+### 项目功能
+此项目为后台管理系统学习
+支持
+ + 商品数据的可视化
+ + 用户，菜单，角色的数据展示
+ + 用户，角色的增删改查
+>>>>>>> 957a1b3ab029d35cb086793bab58fa3a00ebf253
 
 ## Project setup
 ```
