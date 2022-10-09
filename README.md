@@ -8,6 +8,9 @@
 
 
 ## 此项目说明
+### 暂缺项
+ ehart实现商品数据可视化
+
 ### 技术栈
 **Vue3 + Vue-Router + Vuex + TypeScript + ElementPlus + scss + Axios**
 
@@ -17,7 +20,6 @@
  + 商品数据的可视化
  + 用户，菜单，角色的数据展示
  + 用户，角色的增删改查
->>>>>>> 957a1b3ab029d35cb086793bab58fa3a00ebf253
 
 ## Project setup
 ```
