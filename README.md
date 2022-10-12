@@ -8,8 +8,6 @@
 
 
 ## 此项目说明
-### 暂缺项
- ehart实现商品数据可视化
 
 ### 技术栈
 **Vue3 + Vue-Router + Vuex + TypeScript + ElementPlus + scss + Axios**
