@@ -2,8 +2,13 @@ import {
   IUserList,
   IRoleList,
   IGoodList,
-  IMenuList
+  IMenuList,
+  IGoodsAddressSale,
+  IGoodsCategoryCount,
+  IGoodsCategoryFavor,
+  IGoodsCategorySale
 } from '@/service/main/types'
+
 export interface IMainState {
   usersList: IUserList[]
   usersCount: number
@@ -13,4 +18,8 @@ export interface IMainState {
   goodsCount: number
   menuList: IMenuList[]
   menuCount: number
+  goodsCategoryCount: IGoodsCategoryCount[]
+  goodsCategorySale: IGoodsCategorySale[]
+  goodsCategoryFavor: IGoodsCategoryFavor[]
+  goodsAddressSale: IGoodsAddressSale[]
 }

@@ -74,3 +74,25 @@ export interface IPageListData<
   list: T[]
   totalCount?: number
 }
+
+interface IGoodsCategoryData {
+  id: number
+  name: string
+}
+
+export interface IGoodsCategoryCount extends IGoodsCategoryData {
+  goodsCount: number
+}
+
+export interface IGoodsCategorySale extends IGoodsCategoryData {
+  goodsCount: number
+}
+
+export interface IGoodsCategoryFavor extends IGoodsCategoryData {
+  goodsFavor: number
+}
+
+export interface IGoodsAddressSale {
+  address: string
+  count: number
+}

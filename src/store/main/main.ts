@@ -5,14 +5,22 @@ import {
   getPageListData,
   deletePageData,
   createPageData,
-  editPageData
+  editPageData,
+  getGoodsCategoryCount,
+  getGoodsAddressSale,
+  getGoodsCategorySale,
+  getGoodsCategoryFavor
 } from '@/service/main/main'
 import {
   IUserList,
   IPageListQueryInfo,
   IRoleList,
   IGoodList,
-  IMenuList
+  IMenuList,
+  IGoodsAddressSale,
+  IGoodsCategoryCount,
+  IGoodsCategoryFavor,
+  IGoodsCategorySale
 } from '@/service/main/types'
 
 const mainStateModule: Module<IMainState, IRootState> = {
@@ -26,33 +34,58 @@ const mainStateModule: Module<IMainState, IRootState> = {
       goodsList: [],
       goodsCount: 0,
       menuList: [],
-      menuCount: 0
+      menuCount: 0,
+      goodsAddressSale: [],
+      goodsCategoryCount: [],
+      goodsCategoryFavor: [],
+      goodsCategorySale: []
     }
   },
   mutations: {
+    // system/user
     changeUsersList(state, usersList: IUserList[]) {
       state.usersList = usersList
     },
     changeUsersCount(state, usersCount: number) {
       state.usersCount = usersCount
     },
+
+    // system/role
     changeRoleList(state, roleList: IRoleList[]) {
       state.roleList = roleList
     },
     changeRoleCount(state, roleCount: number) {
       state.roleCount = roleCount
     },
+
+    // product/goods
     changeGoodsList(state, goodsList: IGoodList[]) {
       state.goodsList = goodsList
     },
     changeGoodsCount(state, goodsCount: number) {
       state.goodsCount = goodsCount
     },
+
+    // system/menu
     changeMenuList(state, menuList: IMenuList[]) {
       state.menuList = menuList
     },
     changeMenuCount(state, menuCount: number) {
       state.menuCount = menuCount
+    },
+
+    // analysis
+    changeCategoryGoodsCount(state, list: IGoodsCategoryCount[]) {
+      state.goodsCategoryCount = list
+    },
+    changeCategoryGoodsSale(state, list: IGoodsCategorySale[]) {
+      state.goodsCategorySale = list
+    },
+    changeCategoryGoodsFavor(state, list: IGoodsCategoryFavor[]) {
+      state.goodsCategoryFavor = list
+    },
+    changeAddressGoodsSale(state, list: IGoodsAddressSale[]) {
+      state.goodsAddressSale = list
     }
   },
   getters: {
@@ -119,6 +152,16 @@ const mainStateModule: Module<IMainState, IRootState> = {
           size: 10
         }
       })
+    },
+    async getDashBoardDataAction(context) {
+      const categoryCountResult = await getGoodsCategoryCount()
+      context.commit('changeCategoryGoodsCount', categoryCountResult.data)
+      const categorySaleResult = await getGoodsCategorySale()
+      context.commit('changeCategoryGoodsSale', categorySaleResult.data)
+      const categoryFavorResult = await getGoodsCategoryFavor()
+      context.commit('changeCategoryGoodsFavor', categoryFavorResult.data)
+      const addressSaleResult = await getGoodsAddressSale()
+      context.commit('changeAddressGoodsSale', addressSaleResult.data)
     }
   },
   modules: {}
