@@ -1,5 +1,5 @@
 import axRequest from '../index'
-import { IDataType } from '../types'
+import { IDataType } from '../type'
 import { IPageListData, IPageListQueryInfo } from './types'
 import {
   IGoodsCategoryCount,

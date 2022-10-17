@@ -1,7 +1,9 @@
 import { FormRules } from 'element-plus'
 type TFormType = 'input' | 'password' | 'select' | 'datepicker'
-type TSelectOption = 'label' | 'value'
-
+type TOptions = {
+  label: string
+  value: any
+}
 export interface IFormItem {
   field: string
   type: TFormType
@@ -9,7 +11,7 @@ export interface IFormItem {
   rules?: FormRules
   placeholder?: string
   // 针对select
-  options?: Record<TSelectOption, string>[]
+  options?: TOptions[]
   otherAttrs?: Record<string, any>
   isHidden?: boolean
 }

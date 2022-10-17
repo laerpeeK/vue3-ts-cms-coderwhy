@@ -13,7 +13,7 @@
           </hy-card>
         </el-col>
         <el-col :span="7">
-          <hy-card title="分类商品销量(玫瑰图)">
+          <hy-card title="分类商品数量(玫瑰图)">
             <rose-echart :roseData="goodsCategoryCount"></rose-echart>
           </hy-card>
         </el-col>

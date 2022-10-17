@@ -43,6 +43,10 @@ export default defineComponent({
     otherInfo: {
       type: Object,
       default: () => ({})
+    },
+    catalog: {
+      type: String,
+      default: 'main'
     }
   },
   setup(props) {
@@ -65,13 +69,13 @@ export default defineComponent({
 
     const handleConfirmClick = () => {
       if (Object.keys(props.defaultInfo).length) {
-        store.dispatch('main/editPageDataAction', {
+        store.dispatch(`${props.catalog}/editPageDataAction`, {
           pageName: props.pageName,
           editData: { ...formData.value, ...props.otherInfo },
           id: props.defaultInfo.id
         })
       } else {
-        store.dispatch('main/createPageDataAction', {
+        store.dispatch(`${props.catalog}/createPageDataAction`, {
           pageName: props.pageName,
           newData: { ...formData.value, ...props.otherInfo }
         })

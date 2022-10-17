@@ -82,6 +82,10 @@ export default defineComponent({
     pageName: {
       type: String,
       required: true
+    },
+    catalog: {
+      type: String,
+      default: 'main'
     }
   },
   setup(props, { emit }) {
@@ -96,7 +100,7 @@ export default defineComponent({
 
     const getPageData = (queryInfo?: Record<string, any>) => {
       if (!isQuery) return
-      store.dispatch('main/getPageListAction', {
+      store.dispatch(`${props.catalog}/getPageListAction`, {
         pageName: props.pageName,
         queryInfo: {
           offset: (pageInfo.value.currentPage - 1) * pageInfo.value.pageSize,
@@ -116,11 +120,11 @@ export default defineComponent({
 
     // 表格填充数据
     const listData = computed(() => {
-      return store.getters[`main/pageListData`](props.pageName)
+      return store.getters[`${props.catalog}/pageListData`](props.pageName)
     })
 
     const listCount = computed(() => {
-      return store.getters['main/pageListCount'](props.pageName)
+      return store.getters[`${props.catalog}/pageListCount`](props.pageName)
     })
 
     // 页面独立插槽
@@ -148,7 +152,7 @@ export default defineComponent({
     }
 
     const handleDeleteClick = (item: IUserList | IMenuList | IGoodList) => {
-      store.dispatch('main/deletePageDataAction', {
+      store.dispatch(`${props.catalog}/deletePageDataAction`, {
         pageName: props.pageName,
         id: item.id
       })

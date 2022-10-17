@@ -33,7 +33,7 @@
                   >
                     <el-option
                       v-for="option in item.options"
-                      :key="option.value"
+                      :key="option.label"
                       :value="option.value"
                       :label="option.label"
                     />
