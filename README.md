@@ -1,6 +1,10 @@
 # vue3-ts-cms-coderwhy
 根据coderwhy vue3项目教学视频复刻的项目demo
 
+[访问链接](vue3-ts-cms-coderwhy.vercel.app)
+**Vercel托管，国外站点，登录等API响应速度较慢。**
+
+
 ## 原项目说明
 [视频地址 收费](https://ke.qq.com/course/package/36008)
 
