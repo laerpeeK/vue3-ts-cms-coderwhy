@@ -5,10 +5,10 @@ module.exports = {
   devServer: {
     // publicPath: '/',
     proxy: {
-      '^/api': {
-        target: 'http://152.136.185.210:5000',
+      '/api': {
+        target: 'http://codercba.com:5000',
         pathRewrite: {
-          '^/api': ''
+          '/api': ''
         },
         changeOrigin: true
       }

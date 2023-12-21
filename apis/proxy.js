@@ -4,7 +4,7 @@ module.exports = (req, res) => {
   let target = ''
 
   if (req.url.startsWith('/backend')) {
-    target = 'http://152.136.185.210:5000'
+    target = 'http://codercba.com:5000'
   }
 
   createProxyMiddleware({
